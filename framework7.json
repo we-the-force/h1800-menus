@@ -1,0 +1,27 @@
+{
+  "cwd": "/Users/gamanox-wtf/wtf/h1800-menus",
+  "type": [
+    "web",
+    "pwa"
+  ],
+  "name": "Palmeira by 1800",
+  "framework": "core",
+  "template": "blank",
+  "bundler": "webpack",
+  "cssPreProcessor": "stylus",
+  "theming": {
+    "customColor": true,
+    "color": "#ffffff",
+    "darkTheme": true,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "webpack": {
+    "developmentSourceMap": true,
+    "productionSourceMap": true,
+    "hashAssets": true,
+    "preserveAssetsPaths": false,
+    "inlineAssets": true
+  }
+}
