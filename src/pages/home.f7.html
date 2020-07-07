@@ -3,46 +3,31 @@
     <!-- Top Navbar -->
     
     <!-- Toolbar-->
-    <!-- <div class="toolbar toolbar-bottom">
-      <div class="toolbar-inner">
-        <a href="#" class="link">Left Link</a>
-        <a href="#" class="link">Right Link</a>
-      </div>
-    </div> -->
+    
     <!-- Scrollable page content-->
     <div class="page-content">
 
       <div class="block block-strong text-align-center">
-        <img src="static/palmeira-logo.svg" alt="" class="logo">
+        <img src="static/palmeira-logo.png" alt="" class="logo">
       </div>
       <div class="block-title menu-title">
         MENÚS
       </div>
       <div class="block">
         <div class="row">
-          <div class="col-10 medium-25 large-34"></div>
-          <div class="col-80 medium-50 large-32">
+          <div class="col-5 medium-25 large-36"></div>
+          <div class="col-90 medium-50 large-28">
             <div class="list menu-list inset">
               <ul>
+                {{#each menu}}
                 <li>
-                  <a href="#" class="list-button text-align-center">Button 1</a>
+                  <a href="#" class="list-button menu-btn text-align-center" data-menu="{{@index}}">{{categoria}}</a>
                 </li>
-                <li>
-                  <a href="#" class="list-button text-align-center">Button 2</a>
-                </li>
-                <li>
-                  <a href="#" class="list-button text-align-center">Button 3</a>
-                </li>
-                <li>
-                  <a href="#" class="list-button text-align-center">Button 3</a>
-                </li>
-                <li>
-                  <a href="#" class="list-button text-align-center">Button 3</a>
-                </li>
+                {{/each}}
               </ul>
             </div>
           </div>
-          <div class="col-10 medium-25 large-34"></div>
+          <div class="col-5 medium-25 large-36"></div>
         </div>
         
       </div>
@@ -59,6 +44,42 @@
   </div>
 </template>
 <script>
-  import $$ from 'dom7'
-export default {}
+  import $$ from 'dom7';
+
+export default {
+  on: {
+    pageMounted: function(e, page){
+      var self = this;
+      var app = self.$app;
+      var context = page.route.context;
+      // var menus = context.menu[0].menus;
+      // var photos=[];
+      // for(const menu in menus){
+      //   photos.push({url: 'https://hacienda1800.com'+menus[menu].path})
+      // }
+      // var menuPopup = app.photoBrowser.create({
+      //     photos : photos,
+      //     theme: 'dark',
+      //     type: 'standalone'
+      // });
+    
+      $$('.menu-btn').on('click', function(e){
+        var currentMenu = $$(this).data('menu');
+        e.preventDefault();
+        var menus = context.menu[currentMenu].menus;
+        var photos=[];
+        for(const menu in menus){
+          photos.push({url: 'https://hacienda1800.com'+menus[menu].path})
+        }
+        var menuPopup = app.photoBrowser.create({
+            photos : photos,
+            theme: 'dark',
+            type: 'standalone',
+            popupCloseLinkText: 'Cerrar'
+        });
+        menuPopup.open();
+      });
+    }
+  }
+}
 </script>
