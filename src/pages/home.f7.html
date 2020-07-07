@@ -1,31 +1,64 @@
 <template>
-  <div class="page" data-name="home">
+  <div class="page" data-name="home" id="home">
     <!-- Top Navbar -->
-    <div class="navbar navbar-large">
-      <div class="navbar-bg"></div>
-      <div class="navbar-inner sliding">
-        <div class="title">Palmeira by 1800</div>
-        <div class="title-large">
-          <div class="title-large-text">Palmeira by 1800</div>
-        </div>
-      </div>
-    </div>
+    
     <!-- Toolbar-->
-    <div class="toolbar toolbar-bottom">
+    <!-- <div class="toolbar toolbar-bottom">
       <div class="toolbar-inner">
         <a href="#" class="link">Left Link</a>
         <a href="#" class="link">Right Link</a>
       </div>
-    </div>
+    </div> -->
     <!-- Scrollable page content-->
     <div class="page-content">
-      <div class="block block-strong">
-        <p>Here is your blank Framework7 app. Let's see what we have here.</p>
-      </div>
 
+      <div class="block block-strong text-align-center">
+        <img src="static/palmeira-logo.svg" alt="" class="logo">
+      </div>
+      <div class="block-title menu-title">
+        MENÚS
+      </div>
+      <div class="block">
+        <div class="row">
+          <div class="col-10 medium-25 large-34"></div>
+          <div class="col-80 medium-50 large-32">
+            <div class="list menu-list inset">
+              <ul>
+                <li>
+                  <a href="#" class="list-button text-align-center">Button 1</a>
+                </li>
+                <li>
+                  <a href="#" class="list-button text-align-center">Button 2</a>
+                </li>
+                <li>
+                  <a href="#" class="list-button text-align-center">Button 3</a>
+                </li>
+                <li>
+                  <a href="#" class="list-button text-align-center">Button 3</a>
+                </li>
+                <li>
+                  <a href="#" class="list-button text-align-center">Button 3</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-10 medium-25 large-34"></div>
+        </div>
+        
+      </div>
+      <div class="block">
+        <p class="footer-text">
+          UNA EXPERIENCIA GOURMET EN EL DESIERTO
+        </p>
+        <p class="social-links display-flex justify-content-center align-items-center">
+          <a href="#" class="link external"> <img src="static/fb.svg" alt=""> PALMEIRA RESTAURANTE BY H1800</a>
+          <a href="#" class="link external"><img src="static/fb.svg" alt=""> <img src="static/ig.svg" alt=""> HACIENDA1800</a>
+        </p>
+      </div>
     </div>
   </div>
 </template>
 <script>
+  import $$ from 'dom7'
 export default {}
 </script>

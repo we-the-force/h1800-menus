@@ -1,0 +1,79 @@
+#home
+    .block
+        background-color transparent
+        &:after, &:before
+            display none
+    .block-title.menu-title
+        font-family 'Bookmania'
+        font-style normal
+        font-weight 600
+        font-size 24px
+        line-height 34px
+        text-align center
+        letter-spacing 1em
+
+        color #000000
+    .page-content
+        background-image url(../static/palmeira-bg.jpg)
+        background-position 50% 50%
+        background-size cover
+        background-repeat no-repeat
+    .toolbar.toolbar-bottom
+        background-color transparent
+        &:before,&:after
+            display none
+        .toolbar-inner
+            justify-content: center
+    .menu-list
+        &.inset li.swipeout:first-child, &.inset li:first-child > a, &.inset li.swipeout:last-child, &.inset li:last-child > a
+            border-radius: 0px
+        ul
+            background transparent
+        a.list-button
+            padding 24px 0px
+            background rgba(255,255,255,0.8)
+            // border 3px solid #FFFFFF
+            font-family Barlow
+            font-style normal
+            font-weight 600
+            font-size 16px
+            line-height 19px
+            align-items center
+            text-align center
+            letter-spacing 0.4em
+            text-transform uppercase
+            color #000000
+            display block
+            margin-bottom 20px
+            &:after
+                display none
+            &.active-state,&:hover
+                background-color rgba(0,0,0,0.8)
+                color #fff
+    .footer-text
+        font-family Bookmania
+        font-style normal
+        font-weight 600
+        font-size 14px
+        line-height 20px
+        align-items center
+        text-align center
+        letter-spacing 0.6em
+
+        color #FFFFFF
+    .social-links
+        .link
+            font-family Barlow
+            font-style  normal
+            font-weight 400
+            font-size   12px
+            line-height 14px
+            align-items center
+            text-align  center
+            letter-spacing  0.4em
+
+            color   #FFFFFF
+            padding-right 25px
+            padding-left 25px
+            img
+                padding-right 12px
