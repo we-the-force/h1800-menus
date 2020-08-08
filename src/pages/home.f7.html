@@ -21,7 +21,7 @@
               <ul>
                 {{#each menu}}
                 <li>
-                  <a href="#" class="list-button menu-btn text-align-center" data-menu="{{@index}}">{{categoria}}</a>
+                  <a href="#" class="list-button menu-btn text-align-center" data-menu="{{@index}}" data-url="{{url}}">{{categoria}}</a>
                 </li>
                 {{/each}}
               </ul>
@@ -52,6 +52,7 @@ export default {
       var self = this;
       var app = self.$app;
       var context = page.route.context;
+      console.log(context);
       // var menus = context.menu[0].menus;
       // var photos=[];
       // for(const menu in menus){
@@ -65,6 +66,8 @@ export default {
     
       $$('.menu-btn').on('click', function(e){
         var currentMenu = $$(this).data('menu');
+        var currentUrl = $$(this).data('url');
+
         e.preventDefault();
         var menus = context.menu[currentMenu].menus;
         var photos=[];
@@ -75,7 +78,10 @@ export default {
             photos : photos,
             theme: 'dark',
             type: 'standalone',
-            popupCloseLinkText: 'Cerrar'
+            popupCloseLinkText: 'Cerrar',
+            routableModals: true,
+            url: currentUrl
+
         });
         menuPopup.open();
       });

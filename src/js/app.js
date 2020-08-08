@@ -20,13 +20,18 @@ var app = new Framework7({
 
   name: 'Palmeira by 1800', // App name
   theme: 'auto', // Automatic theme detection
+  
 
-
-
+  view: {
+    // pushState: true,
+    // pushStateSeparator: '',
+    // pushStateRoot: 'https://hacienda1800.com'
+    // pushStateRoot: 'https://hacienda1800.com'
+  },
   // App routes
   routes: routes,
   // Register service worker
   serviceWorker: {
-    path: '/service-worker.js',
+    path: './service-worker.js',
   },
 });

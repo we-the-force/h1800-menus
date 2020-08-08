@@ -1,0 +1,46 @@
+<template>
+  <div class="page" data-name="test" id="test">
+    <!-- Top Navbar -->
+
+    <!-- Toolbar-->
+
+    <!-- Scrollable page content-->
+    <div class="page-content">
+    </div>
+  </div>
+</template>
+<script>
+  import $$ from 'dom7';
+
+export default {
+  on: {
+    pageMounted: function(e, page){
+
+      var currentMenu = 3;
+
+      var self = this;
+      var app = self.$app;
+      var context = page.route.context;
+
+      e.preventDefault();
+      var menus = context.menu[currentMenu].menus;
+      var photos=[];
+      for(const menu in menus){
+        photos.push({url: 'https://hacienda1800.com'+menus[menu].path})
+      }
+
+      var menuPopup = app.photoBrowser.create({
+          photos : photos,
+          theme: 'dark',
+          type: 'standalone',
+          // popupCloseLinkText: 'Cerrar',
+          // routableModals: true,
+
+
+      });
+      menuPopup.open();
+      $$('.popup-close').css('display', 'none');
+    }
+  }
+}
+</script>

@@ -1,8 +1,13 @@
 
 import HomePage from '../pages/home.f7.html';
+import RoomPage from '../pages/room.f7.html';
+
 
 var routes = [
+  
+  
   {
+    
     path: '(.*)',
     // pushStateRoot: 'menus',
     async: function(routeTo, reouteFrom, resolve, reject){
@@ -15,7 +20,7 @@ var routes = [
         app.preloader.hide();
         resolve(
           {
-            component: HomePage
+            component: RoomPage
           },
           {
             context: {
