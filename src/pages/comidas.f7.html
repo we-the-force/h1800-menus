@@ -26,7 +26,7 @@ export default {
       var menus = context.menu[currentMenu].menus;
       var photos=[];
       for(const menu in menus){
-        photos.push({url: 'https://hacienda1800.com'+menus[menu].path})
+        photos.push({url: 'https://hacienda1800.com/'+menus[menu].path})
       }
 
       var menuPopup = app.photoBrowser.create({
